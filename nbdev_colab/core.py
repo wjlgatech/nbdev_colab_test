@@ -38,20 +38,6 @@ def setup_git(path:Path, project_name:str, username:str, password:str, email:str
 from nbdev.export import *
 
 # Cell
-"""def git_push(path:Path, message:str):
-  "Convert the notebooks to scripts and then push to the library"
-  start = os.getcwd()
-  os.chdir(path)
-  commands = []
-  commands.append('nbdev_install_git_hooks')
-  commands.append('nbdev_build_lib')
-  commands.append('git add *')
-  commands.append(f'git commit -m "{message}"')
-  commands.append('git push origin master')
-  for cmd in commands:
-    process = subprocess.Popen(cmd, stdout=subprocess.PIPE)
-    output, err = process.communicate()
-  os.chdir(start)"""
 
 def git_push(path:Path, message:str):
     start = os.getcwd()
