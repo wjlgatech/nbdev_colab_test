@@ -48,5 +48,4 @@ def git_push(path:Path, message:str):
     !git commit -m message
     !git push origin master
     os.chdir(start)
-
 git_push(git_path, 'testing_1')
