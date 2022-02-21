@@ -10,7 +10,7 @@ from google.colab import drive
 def setup_drive():
   "Connect Google Drive to use GitHub"
   drive.mount('/content/drive', force_remount=True)
-  os._exit(00)
+  #os._exit(00)
 
 # Cell
 from pathlib import Path
@@ -20,6 +20,7 @@ import os, subprocess
 def setup_git(path:Path, project_name:str, username:str, password:str, email:str):
   "Link your mounted drive to GitHub. Remove sensitive information before pushing"
   start = os.getcwd()
+  print(f'start={start}')
   os.chdir(path)
   commands = []
   commands.append(f"git config --global user.email {email}")
@@ -51,3 +52,5 @@ def git_push(path:Path, message:str):
     process = subprocess.Popen(cmd, stdout=subprocess.PIPE)
     output, err = process.communicate()
   os.chdir(start)
+
+git_push(git_path, 'testing')
